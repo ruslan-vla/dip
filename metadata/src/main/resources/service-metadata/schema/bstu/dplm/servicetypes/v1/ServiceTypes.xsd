@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:ST="http://edu/schema/bstu/dplm/servicetypes/v1"
+    xmlns:DT="http://edu/schema/bstu/dplm/datatypes/v1"
+    targetNamespace="http://edu/schema/bstu/dplm/servicetypes/v1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:import namespace="http://edu/schema/bstu/dplm/datatypes/v1" schemaLocation="../../datatypes/v1/DataTypes.xsd"/>
+
+	<xs:complexType name="PingRequestType">
+
+	</xs:complexType>
+
+	<xs:complexType name="PingResponseType">
+        <xs:sequence>
+            <xs:element name="data" type="xs:string" />
+        </xs:sequence>
+	</xs:complexType>
+
+    <xs:element name="pingRequest" type="ST:PingRequestType" />
+    <xs:element name="pingResponse" type="ST:PingResponseType" />
+
+</xs:schema>

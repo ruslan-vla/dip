@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+    xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+    xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:SI="http://edu/wsdl/bstu/dplm/serviceinterface/v1"
+    xmlns:ST="http://edu/schema/bstu/dplm/servicetypes/v1"
+    targetNamespace="http://edu/wsdl/bstu/dplm/serviceinterface/v1">
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://edu/schema/bstu/dplm/servicetypes/v1"
+            xmlns:ST="http://edu/schema/bstu/dplm/servicetypes/v1">
+            <xs:import namespace="http://edu/schema/bstu/dplm/servicetypes/v1"
+                schemaLocation="../../../../../schema/bstu/dplm/servicetypes/v1/ServiceTypes.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+
+    <wsdl:message name="PingRequest">
+        <wsdl:part name="request" element="ST:pingRequest" />
+    </wsdl:message>
+    <wsdl:message name="PingResponse">
+        <wsdl:part name="response" element="ST:pingResponse" />
+    </wsdl:message>
+
+    <!-- PORT TYPES -->
+    <wsdl:portType name="ServiceInterface">
+        <wsdl:operation name="ping">
+            <wsdl:input message="SI:PingRequest"/>
+            <wsdl:output message="SI:PingResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+</wsdl:definitions>
