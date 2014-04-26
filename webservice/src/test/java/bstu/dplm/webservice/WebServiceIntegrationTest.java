@@ -14,7 +14,7 @@ public class WebServiceIntegrationTest
     @Test
     public void run() throws IOException
     {
-        System.out.println("Started...");
+        System.out.println("Started..");
         System.in.read();
     }
 }
